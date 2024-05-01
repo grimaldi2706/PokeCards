@@ -1,9 +1,24 @@
-
-<div class="bg-gray-100 flex items-center justify-center h-screen">
+<div class="container bg-gray-100 text-center">
+  @if(pokemonGet$ | async; as resultObject){
+    <br>
+    <div class="">
+      @for (item of resultObject.results; track item) {
+        <div class="pokecard ">
+          <h1 class="text-4xl font-semibold text-white text-center">PokeCard</h1>
+          <br>
+          <div class="flex justify-center">
+            <img src="https://via.placeholder.com/300" alt="Imagen" class="rounded-full">
+          </div>
+          <br>
+          <h2 class="text-3xl font-semibold text-white" >{{item.name.toUpperCase()}}</h2>
+        </div>
+        <br>
+      }
+    </div>
+  }
+  <!--
     <div class="bg-white rounded-lg shadow p-8 max-w-md">
-      <!-- Título -->
       <h1 class="text-3xl font-semibold text-gray-800 mb-4 text-center">PokeCard</h1>
-      <!-- Imagen -->
       <div class="flex justify-center mb-6">
           <img src="https://via.placeholder.com/300" alt="Imagen" class="rounded-full">
       </div>
@@ -14,4 +29,5 @@
       <div class="text-gray-800 text-center">
       </div>
     </div>
+  -->
 </div>
