@@ -13,7 +13,7 @@ import { Pokemon, PokemonResults } from '../../interfaces/pokemon';
 })
 export class PokecardsComponent implements OnInit{
   @Input() pokemonInfo!: Pokemon;
-  
+  count = 1;
   public pokemonGet$!: Observable<PokemonResults>
   constructor(private service: PokemonService){}
 
