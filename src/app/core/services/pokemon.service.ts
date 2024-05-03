@@ -11,7 +11,7 @@ export class PokemonService {
   constructor( private http:HttpClient) { }
 
   getPokemonList(): Observable<PokemonResults> {
-    return this.http.get<PokemonResults>('https://pokeapi.co/api/v2/pokemon?limit=30&offset=0').pipe(catchError((error: HttpErrorResponse) => {
+    return this.http.get<PokemonResults>('https://pokeapi.co/api/v2/pokemon?limit=100&offset=0').pipe(catchError((error: HttpErrorResponse) => {
       let errorMessage = "";
       if(error.error instanceof ErrorEvent){
         errorMessage = 'Error: ${error.error.message}';
